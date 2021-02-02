@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site Hotel</title>
+  <link href="styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1><i class="fas fa-user"></i>&nbsp;Faça seu cadastro abaixo e começe a procurar por hotéis,</h1>
+      <span>Agora Mesmo!!</span>
+    </div>
+    <svg class="waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 280">
+      <path fill="#fff" fill-opacity="1"
+        d="M0,128L26.7,138.7C53.3,149,107,171,160,186.7C213.3,203,267,213,320,202.7C373.3,192,427,160,480,154.7C533.3,149,587,171,640,192C693.3,213,747,235,800,218.7C853.3,203,907,149,960,128C1013.3,107,1067,117,1120,154.7C1173.3,192,1227,256,1280,261.3C1333.3,267,1387,213,1413,186.7L1440,160L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z">
+      </path>
+    </svg>
+
+    <div class="container-inputs">
+      <form action="" class="inputs">
+        <h2>Cadastro de Usuário:</h2>
+        <div class="box-input">
+          <div>
+            <label for="name">Nome Completo:</label>
+            <input type="text" id="name" required />
+          </div>
+          <div>
+            <label for="cpf">CPF:</label>
+            <input type="number" id="cpf" placeholder="000.000.000-00" required />
+          </div>
+          <div>
+            <label for="sex">Sexo:</label>
+            <div>
+              <select name="sexo" required>
+                <option value="Masculino">Masculino</option>
+                <option value="Feminino">Feminino</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="box-input">
+          <div>
+            <label for="date">Data de Nascimento:</label>
+            <input type="date" id="date" required />
+          </div>
+          <div>
+            <label for="civil-status">Estado Civil:</label>
+            <div>
+              <select name="estado-civil" required>
+                <option value="Masculino">Solteiro(a)</option>
+                <option value="Feminino">Casado(a)</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label for="city">Cidade:</label>
+            <input type="text" id="city" required />
+          </div>
+        </div>
+
+        <div class="box-input">
+          <div>
+            <label for="state">Estado:</label>
+            <div>
+              <select id="state" name="estado">
+                <option value="AC">Acre</option>
+                <option value="AL">Alagoas</option>
+                <option value="AP">Amapá</option>
+                <option value="AM">Amazonas</option>
+                <option value="BA">Bahia</option>
+                <option value="CE">Ceará</option>
+                <option value="DF">Distrito Federal</option>
+                <option value="ES">Espírito Santo</option>
+                <option value="GO">Goiás</option>
+                <option value="MA">Maranhão</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="MS">Mato Grosso do Sul</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="PA">Pará</option>
+                <option value="PB">Paraíba</option>
+                <option value="PR">Paraná</option>
+                <option value="PE">Pernambuco</option>
+                <option value="PI">Piauí</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="RN">Rio Grande do Norte</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RO">Rondônia</option>
+                <option value="RR">Roraima</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="SP">São Paulo</option>
+                <option value="SE">Sergipe</option>
+                <option value="TO">Tocantins</option>
+                <option value="EX">Estrangeiro</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label for="cep">CEP:</label>
+            <input placeholder="00000-000" type="number" id="cep" required />
+          </div>
+          <div>
+            <label for="email">E-mail:</label>
+            <input type="email" placeholder="a@a.com" id="email" required />
+          </div>
+        </div>
+
+        <div class="box-input">
+          <div>
+            <label for="password">Senha:</label>
+            <input type="password" id="password" required />
+          </div>
+          <div>
+            <label for="confirm-password">Confirmação de Senha:</label>
+            <input type="password" id="confirm-password" required />
+          </div>
+        </div>
+
+        <div>
+          <button type="submit" class="btn-submit">Cadastrar</button>
+        </div>
+      </form>
+    </div>
+    <div>
+      <a href="../../index.html" class="btn-back"><i class="fas fa-arrow-left"></i>&nbsp;Voltar</a>
+    </div>
+  </div>
+</body>
+
+</html>

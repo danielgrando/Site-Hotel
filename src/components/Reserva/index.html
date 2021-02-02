@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Hotel</title>
+    <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+</head>
+
+<body>
+    <section class="showcase">
+        <header>
+            <h2 class="logo">Hotel</h2>
+            <div class="toggle"></div>
+        </header>
+        <video src="../../assets/Pexels Videos 2169880.mp4" muted loop autoplay></video>
+        <div class="overlay"></div>
+    </section>
+    <form action="" class="form">
+        <div class="inputs">
+            <div>
+                <input type="date" placeholder="Entrada" onchange="this.className=(this.value!=''?'has-value':'')" />
+                <input type="date" placeholder="Saída" onchange="this.className=(this.value!=''?'has-value':'')" />
+                <input type="number" placeholder="Adultos" />
+                <input type="number" placeholder="Crianças até 3 Anos" />
+                <input type="number" placeholder="Crianças de 4 até 12 Anos" />
+                <button type="submit" class="btn-search"><i class="fas fa-search"></i>&nbsp;Buscar</button>
+            </div>
+        </div>
+    </form>
+    <div class="results">
+        <h2>Resultados:</h2>
+    </div>
+    <div class="card">
+        <div class="hoteis">
+            <div>
+                <div class="box">
+                    <div>
+                        <img src="https://cdn.panrotas.com.br/portal-panrotas-statics/media-files-cache/301395/078fea0259c5b673bf2d35bcc14f0da5pestanaalvorsouthbeachexterior5/61,0,2424,1447/1206,720,0.24/0/default.jpg"
+                            alt="">
+                    </div>
+                    <div>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i>
+                    </div>
+
+                    <div class="description">
+                        <div>
+                            <p>Hotel</p>
+                        </div>
+                        <div class="box-btn">
+                            <button class="btn-rent">Reservar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="box">
+                    <div>
+                        <img src="https://s3.amazonaws.com/media.viajenaviagem.com/wp-content/uploads/2019/08/Suite-da-Montanha-600.jpeg"
+                            alt="">
+                    </div>
+                    <div>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <div class="description">
+                        <div>
+                            <p>Hotel</p>
+                        </div>
+                        <div class="box-btn">
+                            <button class="btn-rent">Reservar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="box">
+                    <div>
+                        <img src="
+                        https://blog.deusarodrigues.com.br/wp-content/uploads/2019/05/The-Table-Bay-Hotel.jpg"
+                            alt="">
+                    </div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i>
+                    </div>
+                    <div class="description">
+                        <div>
+                            <p>Hotel</p>
+                            <p class="text"></p>
+                        </div>
+                        <div class="box-btn">
+                            <button class="btn-rent">Reservar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    <div class="menu">
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../Cadastro/index.html">Cadastro</a></li>
+            <li><a href="#">Efetuar Reserva</a></li>
+            <li><a href="../Contato/index.html">Contato</a></li>
+        </ul>
+    </div>
+
+    </div>
+</body>
+<script type="text/javascript" src="index.js"></script>
+
+</html>

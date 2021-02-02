@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site Hotel</title>
+  <link href="styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1><i class="fas fa-envelope"></i>&nbsp;Entre em contato conosco: </h1>
+    </div>
+    <svg class="waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 280">
+      <path fill="#fff" fill-opacity="1"
+        d="M0,128L26.7,138.7C53.3,149,107,171,160,186.7C213.3,203,267,213,320,202.7C373.3,192,427,160,480,154.7C533.3,149,587,171,640,192C693.3,213,747,235,800,218.7C853.3,203,907,149,960,128C1013.3,107,1067,117,1120,154.7C1173.3,192,1227,256,1280,261.3C1333.3,267,1387,213,1413,186.7L1440,160L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z">
+      </path>
+    </svg>
+    <div class="container-inputs">
+      <form action="" class="inputs">
+        <h2>Formulário para contato:</h2>
+        <div class="box-input">
+          <div>
+            <label for="name">Nome Completo:</label>
+            <input type="text" id="name" required />
+          </div>
+          <div>
+            <label for="email">E-mail:</label>
+            <input type="email" placeholder="a@a.com" id="email" required />
+          </div>
+        </div>
+
+
+        <div class="box-input">
+          <div>
+            <label for="mobile">Celular:</label>
+            <input type="number" placeholder="(00) 00000-0000" id="mobile" required />
+          </div>
+          
+          <div>
+            <p>Que tal dizer como nos conheceu ?</p>
+            <select name="form" required>
+              <option value="Facebook">Facebook</option>
+              <option value="Twitter">Anúncios</option>
+              <option value="Instagram">Instagram</option>
+              <option value="Amigos">Família</option>
+              <option value="Amigos">Amigos</option>
+              <option value="Site">Site</option>
+              <option value="Twitter">Twitter</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="box-input">
+          <div>
+            <label for="text">Mensagem:</label>
+            <div>
+              <textarea type="text" id="text" required></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <button type="submit" class="btn-submit">Enviar</button>
+        </div>
+    </div>
+    </form>
+    <div>
+      <a href="../../index.html" class="btn-back"><i class="fas fa-arrow-left"></i>&nbsp;Voltar</a>
+    </div>
+
+</html>
