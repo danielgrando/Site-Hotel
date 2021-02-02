@@ -27,7 +27,7 @@
     z-index: 1;
 }
 .waves{
-    background: #80ffdb;
+    background: linear-gradient(#80ffdb,white);
     position: absolute;
     top: 0;
     bottom: 0;
