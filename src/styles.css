@@ -33,7 +33,7 @@ header .logo{
   background-position: center;
   cursor: pointer;
 }
-.toggle.activ{
+.toggle.active{
   background: url(https://i.ibb.co/rt3HybH/close.png);
   background-repeat: no-repeat;
   background-size: 25px;
@@ -73,7 +73,7 @@ header .logo{
   width: 100%;
   height: 100%;
   background: #03a9f4;
-  opacity: 0.6;
+  opacity: 0.3;
   mix-blend-mode: overlay;
 }
 .text{
