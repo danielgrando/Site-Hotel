@@ -58,7 +58,8 @@ header .logo{
   right: 250px;
 }
 .inputs.active{
-    display: none;
+    z-index: -1;
+    opacity: 0;
 }
 
 .showcase video{
@@ -111,6 +112,7 @@ header .logo{
     position: absolute;
     z-index: 10;
     top: 10rem;
+    transition: all .3s ease-in;
 }
 .form{
     display: flex;
@@ -167,7 +169,7 @@ input[type="date"]:not(.has-value):before{
     left: 9rem;
 }
 .card{
-    position:  absolute;
+    position: absolute;
     z-index: 10;
     top: 15rem;
     color: white;
