@@ -36,16 +36,16 @@ btnReservar.addEventListener('click', (e) => {
   let criançasNumber = parseInt(crianças3anos);
   let crianças12Number = parseInt(crianças12anos);
 
-  if((dateStartFormated && dateEndFormated < dataFormated) || (adultosNumber < 1 || adultosNumber > 4) || 
+  if((dateStartFormated && dateEndFormated < dataFormated) || (dateStartFormated >= dateEndFormated) ||(adultosNumber < 1 || adultosNumber > 4) || 
       (criançasNumber < 0 || criançasNumber > 3) || (crianças12Number < 0 || crianças12Number > 4)){
       resultReserva.innerText = "Reversa indisponível!";
-      resultReserva.style.color = "red";
+      resultReserva.style.color = "red"; 
       resultReserva.style.margin = "2rem auto";
-      btnReservar.style.marginTop = "-4.5rem"
+      btnReservar.style.marginTop = "-4.6rem"
     }else{
       resultReserva.innerText = "Reversa Solicitada!";
       resultReserva.style.color = "#adff29";
       resultReserva.style.margin = "2rem auto";
-      btnReservar.style.marginTop = "-4.5rem"
+      btnReservar.style.marginTop = "-4.6rem"
   }
 })
