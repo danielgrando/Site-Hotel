@@ -8,7 +8,8 @@
   <link href="styles.css" rel="stylesheet">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
 </head>
 
 <body>
@@ -28,18 +29,19 @@
           <div>
             <label for="name">Nome Completo:</label>
             <input type="text" id="name" required />
+            <span id="resultNome"></span>
           </div>
           <div>
             <label for="email">E-mail:</label>
             <input type="email" placeholder="a@a.com" id="email" required />
+            <span id="resultEmail"></span>
           </div>
         </div>
-
 
         <div class="box-input">
           <div>
             <label for="mobile">Celular:</label>
-            <input type="number" placeholder="(00) 00000-0000" id="mobile" required />
+            <input type="text" id="phone" name="phone" placeholder="(00) 00000-0000"/>
           </div>
           
           <div>
@@ -61,12 +63,13 @@
             <label for="text">Mensagem:</label>
             <div>
               <textarea type="text" id="text" required></textarea>
+              <span id="resultText"></span>
             </div>
           </div>
         </div>
 
         <div>
-          <button type="submit" class="btn-submit">Enviar</button>
+          <button id="btnSubmit" class="btn-submit">Enviar</button>
         </div>
     </div>
     </form>
@@ -75,5 +78,6 @@
     </div>
   </body>
   <script src="./index.js"></script>
+ 
 
 </html>
