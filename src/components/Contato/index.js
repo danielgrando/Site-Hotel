@@ -34,25 +34,22 @@ btnSubmit.addEventListener('click', (e) => {
   let emailSplit = email.split("");
 
   let resultSplit = isNaN(emailSplit[0]);
+
   console.log(resultSplit)
-
-  console.log(validName);
   
-  if (email == email.toLowerCase() && resultSplit === true && email !== ""){
-    if(emailSplit.indexOf('@') !== -1 && !email.endsWith('@') && (emailSplit.indexOf('.') !== -1 && email.indexOf('@') < email.indexOf('.') && !email.endsWith('.'))){
-      resultEmail.innerText = "Email inválido!";
-      resultEmail.style.color = "red";
+  if (email == email.toLowerCase() && resultSplit === true && email !== "" && emailSplit.indexOf('@') !== -1 && !email.endsWith('@') && (emailSplit.indexOf('.') !== -1 && email.indexOf('@') < email.indexOf('.') && !email.endsWith('.'))){
+    if(validName === true && nome.length >= 3){
+      window.location.href = "/src/";
+    }else{
+      resultNome.innerText = "Nome inválido!";
+      resultNome.style.color = "red";
+    }if(text == ''){
+      resultText.innerText = "Texto inválido!";
+      resultText.style.color = "red";
     }
-  }
-
-  if(validName === true && nome.length >= 3){
-    // window.location.href = "/src/";
   }else{
-    resultNome.innerText = "Nome inválido!";
-    resultNome.style.color = "red";
-  }if(text == ''){
-    resultText.innerText = "Texto inválido!";
-    resultText.style.color = "red";
+    resultEmail.innerText = "Email inválido!";
+    resultEmail.style.color = "red";
   }
  
 })
