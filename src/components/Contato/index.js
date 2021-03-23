@@ -34,8 +34,6 @@ btnSubmit.addEventListener('click', (e) => {
   let emailSplit = email.split("");
 
   let resultSplit = isNaN(emailSplit[0]);
-
-  console.log(resultSplit)
   
   if (email == email.toLowerCase() && resultSplit === true && email !== "" && emailSplit.indexOf('@') !== -1 && !email.endsWith('@') && (emailSplit.indexOf('.') !== -1 && email.indexOf('@') < email.indexOf('.') && !email.endsWith('.'))){
     if(validName === true && nome.length >= 3){
