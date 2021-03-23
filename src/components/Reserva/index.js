@@ -16,9 +16,9 @@ btnReservar.addEventListener('click', (e) => {
   const dateStart = document.getElementById('dateStart').value;
   const dateEnd = document.getElementById('dateEnd').value;
   const adultos = document.getElementById('adultos').value;
-  const crianças3 = document.getElementById('crianças3').value;
-  const crianças4 = document.getElementById('crianças4').value; 
-
+  const crianças3anos = document.getElementById('crianças3').value;
+  const crianças12anos = document.getElementById('crianças12').value; 
+  const resultReserva = document.getElementById('resultReserva');
 
   let data = new Date();
   let dataMais2 = data.setDate(data.getDate() + 1);
@@ -32,10 +32,20 @@ btnReservar.addEventListener('click', (e) => {
   let dateStartFormated = formatter.format(dataInicio);
   let dateEndFormated = formatter.format(dataFinal);
 
-  if(dateStartFormated && dateEndFormated < dataFormated){
-    console.log('menor')
-  }else{
-    console.log('maior')
-  }
+  let adultosNumber = parseInt(adultos);
+  let criançasNumber = parseInt(crianças3anos);
+  let crianças12Number = parseInt(crianças12anos);
 
+  if((dateStartFormated && dateEndFormated < dataFormated) || (adultosNumber < 1 || adultosNumber > 4) || 
+      (criançasNumber < 0 || criançasNumber > 3) || (crianças12Number < 0 || crianças12Number > 4)){
+      resultReserva.innerText = "Reversa indisponível!";
+      resultReserva.style.color = "red";
+      resultReserva.style.margin = "2rem auto";
+      btnReservar.style.marginTop = "-4.5rem"
+    }else{
+      resultReserva.innerText = "Reversa Solicitada!";
+      resultReserva.style.color = "#adff29";
+      resultReserva.style.margin = "2rem auto";
+      btnReservar.style.marginTop = "-4.5rem"
+  }
 })

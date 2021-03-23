@@ -26,7 +26,7 @@ btnSubmit.addEventListener('click', (e) => {
         resultEmail.style.color = "red";
       }
   }else{
-      resultEmail.innerText = "Email inválido!";
-      resultEmail.style.color = "red";
+    resultPassword.innerText = "Email inválido!";
+    resultPassword.style.color = "red";
     }
 })
