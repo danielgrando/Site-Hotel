@@ -33,12 +33,12 @@
           </div>
           <div>
             <label for="cpf">CPF:</label>
-            <input type="number" id="cpf" placeholder="000.000.000-00" required />
+            <input type="number" id="cpf" placeholder="000.000.000-00"  />
           </div>
           <div>
             <label for="sex">Sexo:</label>
             <div>
-              <select name="sexo" required>
+              <select name="sexo" >
                 <option value="Masculino">Masculino</option>
                 <option value="Feminino">Feminino</option>
               </select>
@@ -49,12 +49,12 @@
         <div class="box-input">
           <div>
             <label for="date">Data de Nascimento:</label>
-            <input type="date" id="date" required />
+            <input type="date" id="date"  />
           </div>
           <div>
             <label for="civil-status">Estado Civil:</label>
             <div>
-              <select name="estado-civil" required>
+              <select name="estado-civil" >
                 <option value="Masculino">Solteiro(a)</option>
                 <option value="Feminino">Casado(a)</option>
               </select>
@@ -62,7 +62,7 @@
           </div>
           <div>
             <label for="city">Cidade:</label>
-            <input type="text" id="city" required />
+            <input type="text" id="city"  />
           </div>
         </div>
 
@@ -104,27 +104,27 @@
           </div>
           <div>
             <label for="cep">CEP:</label>
-            <input placeholder="00000-000" type="number" id="cep" required />
+            <input placeholder="00000-000" type="number" id="cep"  />
           </div>
           <div>
             <label for="email">E-mail:</label>
-            <input type="email" placeholder="a@a.com" id="email" required />
+            <input type="email" placeholder="a@a.com" id="email"  />
           </div>
         </div>
 
         <div class="box-input">
           <div>
             <label for="password">Senha:</label>
-            <input type="password" id="password" required />
+            <input type="password" id="password"  />
           </div>
           <div>
             <label for="confirm-password">Confirmação de Senha:</label>
-            <input type="password" id="confirm-password" required />
+            <input type="password" id="confirm-password"  />
           </div>
         </div>
 
         <div>
-          <button type="submit" class="btn-submit">Cadastrar</button>
+          <button id="btnSubmit" class="btn-submit">Cadastrar</button>
         </div>
       </form>
     </div>
@@ -133,5 +133,6 @@
     </div>
   </div>
 </body>
+<script src="./index.js"></script>
 
 </html>

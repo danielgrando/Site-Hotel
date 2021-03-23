@@ -34,21 +34,25 @@
     <div class="login">
       <div class="container-login">
         <h2>Login</h2>
-        <form action="">
+        <form >
           <div class="inputs">
             <label>E-Mail:</label>
-            <input type="email" required />
+            <input type="email" required id="email" />
+            <span id="resultEmail"></span>
             <label>Senha:</label>
-            <input type="password" required />
+            <input type="password" required  id="password"/>
+            <span id="resultPassword"></span>
+            <br/>
             <span><i class="fas fa-lock"></i>&nbsp; Esqueceu sua senha ?</span>
           </div>
           <div class="box-button">
-            <button type="submit"> Entrar <i class="fas fa-arrow-right"></i></button>
+            <button type="button" id="btnSubmit"> Entrar <i class="fas fa-arrow-right"></i></button>
           </div>
           <p class="text-register">Ainda não tem uma conta ?<a href="../Cadastro/index.html"> Cadastre-se aqui!</a></p>
       </div>
       </form>
     </div>
 </body>
+<script src="./index.js"></script>
 
 </html>

@@ -20,14 +20,14 @@
         <video src="../../assets/Pexels Videos 2169880.m4v" muted loop autoplay></video>
         <div class="overlay"></div>
     </section>
-    <form action="" class="form">
+    <form class="form">
         <div class="inputs">
             <div>
-                <input type="date" placeholder="Entrada" onchange="this.className=(this.value!=''?'has-value':'')" />
-                <input type="date" placeholder="Saída" onchange="this.className=(this.value!=''?'has-value':'')" />
-                <input type="number" placeholder="Adultos" />
-                <input type="number" placeholder="Crianças até 3 Anos" />
-                <input type="number" placeholder="Crianças de 4 até 12 Anos" />
+                <input type="date" id="dateStart" placeholder="Entrada" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" onchange="this.className=(this.value!=''?'has-value':'')" />
+                <input type="date" id="dateEnd" placeholder="Saída" onchange="this.className=(this.value!=''?'has-value':'')" />
+                <input type="number" id="adultos"placeholder="Adultos" />
+                <input type="number" id="crianças3" placeholder="Crianças até 3 Anos" />
+                <input type="number" id="crianças4" placeholder="Crianças de 4 até 12 Anos" />
                 <button type="submit" class="btn-search"><i class="fas fa-search"></i>&nbsp;Buscar</button>
             </div>
         </div>
@@ -53,7 +53,7 @@
                             <p>Hotel</p>
                         </div>
                         <div class="box-btn">
-                            <button class="btn-rent">Reservar</button>
+                            <button id="btnReservar" class="btn-rent">Reservar</button>
                         </div>
                     </div>
                 </div>
