@@ -13,20 +13,16 @@ btnSubmit.addEventListener('click', (e) => {
 
   let resultSplit = isNaN(emailSplit[0]);
 
-  if (email == email.toLowerCase() && resultSplit === true && email !== ""){
-    if(emailSplit.indexOf('@') !== -1 && !email.endsWith('@') && (emailSplit.indexOf('.') !== -1 && email.indexOf('@') < email.indexOf('.') && !email.endsWith('.'))){
+    if(email == email.toLowerCase() && resultSplit === true && email !== "" && emailSplit.indexOf('@') !== -1 && !email.endsWith('@') && (emailSplit.indexOf('.') !== -1 && 
+    email.indexOf('@') < email.indexOf('.') && !email.endsWith('.'))){
         if(password == ""){
           resultPassword.innerText = "Senha inválida!";
           resultPassword.style.color = "red";
         }else{
-          window.location.href = "/src/components/Reserva/index.html";
+          window.location.href = "/components/Reserva/index.html";
         }
     }else{
         resultEmail.innerText = "Email inválido!";
         resultEmail.style.color = "red";
       }
-  }else{
-    resultPassword.innerText = "Email inválido!";
-    resultPassword.style.color = "red";
-    }
 })

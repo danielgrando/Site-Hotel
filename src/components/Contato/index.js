@@ -23,6 +23,8 @@ btnSubmit.addEventListener('click', (e) => {
   let email = document.getElementById('email').value;
   let resultNome = document.getElementById('resultNome');
   let resultEmail = document.getElementById('resultEmail');
+  let resultMessage = document.getElementById('resultText');
+
 
   let text = document.getElementById('text').value;
 
@@ -37,17 +39,16 @@ btnSubmit.addEventListener('click', (e) => {
   
   if (email == email.toLowerCase() && resultSplit === true && email !== "" && emailSplit.indexOf('@') !== -1 && !email.endsWith('@') && (emailSplit.indexOf('.') !== -1 && email.indexOf('@') < email.indexOf('.') && !email.endsWith('.'))){
     if(validName === true && nome.length >= 3){
-      window.location.href = "/src/";
+      window.location.href = "/components/Reserva/index.html";
     }else{
       resultNome.innerText = "Nome inválido!";
       resultNome.style.color = "red";
     }if(text == ''){
-      resultText.innerText = "Texto inválido!";
-      resultText.style.color = "red";
+      resultMessage.innerText = "Texto inválido!";
+      resultMessage.style.color = "red";
     }
   }else{
     resultEmail.innerText = "Email inválido!";
     resultEmail.style.color = "red";
   }
- 
 })
