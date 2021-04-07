@@ -7,6 +7,7 @@ let resultPassword = document.getElementById('resultPassword');
 let strong = document.getElementById('strong');
 let progress = document.getElementById('progress');
 var resultCEP;
+var errorPassword;
 
 btnSubmit.addEventListener('click', (e) => {
   e.preventDefault();
@@ -164,9 +165,10 @@ function validDate(){
   }
   
   function validPassword(){
-    if(password.value === ''){
+    if(password.value === '' || errorPassword === true){
       resultPassword.innerText = "Senha inválida!";
       resultPassword.style.color = "red";
+      return false;
     }else{
       resultPassword.innerText = "";
       return true;
@@ -174,7 +176,7 @@ function validDate(){
   }
 
   if( validName() === true && validEmail() === true && validState() === true && validCity() === true && validSex() === true && validCivil() === true
-  && validCPFResult(cpf) === true && validPassword() === true ){
+  && validCPFResult(cpf) === true && validPassword() === true && errorPassword === false){
     getCEP(cep).then(result => {
       if(result === true){
       window.location.href = "/components/Reserva/index.html";
@@ -202,6 +204,11 @@ password.addEventListener('keyup', (e) => {
     resultPassword.style.color = "red";
     strong.innerText = "";
     progress.style.backgroundColor = '';
+    errorPassword = true;
+    if(password.value !== confirmPassword.value ){
+      errorPassword = true;
+    }
+    console.log(errorPassword);
   }else{
     resultPassword.innerText = "";
     resultPassword.style.color = "red";
@@ -231,9 +238,11 @@ confirmPassword.addEventListener('keyup', (e) => {
   e.preventDefault();
 
   if(confirmPassword.value === '' || confirmPassword.value !== password.value){
+    errorPassword = true;
     resultConfirm.innerText = "Senhas Diferentes!";
     resultConfirm.style.color = "red";
   }else{
+    errorPassword = false;
     resultConfirm.innerText = "";
   }
 })
