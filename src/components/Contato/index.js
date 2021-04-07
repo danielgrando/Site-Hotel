@@ -39,7 +39,7 @@ btnSubmit.addEventListener('click', (e) => {
   
   if (email == email.toLowerCase() && resultSplit === true && email !== "" && emailSplit.indexOf('@') !== -1 && !email.endsWith('@') && (emailSplit.indexOf('.') !== -1 && email.indexOf('@') < email.indexOf('.') && !email.endsWith('.'))){
     if(validName === true && nome.length && text !== ''){
-      window.location.href = "/components/Reserva/index.html";
+      window.location.href = "/src/components/Reserva/index.html";
     }else{
       resultNome.innerText = "Nome inválido!";
       resultNome.style.color = "red";

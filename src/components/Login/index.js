@@ -19,10 +19,10 @@ btnSubmit.addEventListener('click', (e) => {
           resultPassword.innerText = "Senha inválida!";
           resultPassword.style.color = "red";
         }else{
-          window.location.href = "/components/Reserva/index.html";
+          window.location.href = "/src/components/Reserva/index.html";
         }
     }else{
         resultEmail.innerText = "Email inválido!";
-        resultEmail.style.color = "red";
+        resultEmail.style.color = "red";  
       }
 })

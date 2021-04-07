@@ -179,7 +179,7 @@ function validDate(){
   && validCPFResult(cpf) === true && validPassword() === true && errorPassword === false){
     getCEP(cep).then(result => {
       if(result === true){
-      window.location.href = "/components/Reserva/index.html";
+      window.location.href = "/src/components/Reserva/index.html";
     }})
     }
 })
