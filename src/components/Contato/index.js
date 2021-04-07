@@ -38,7 +38,7 @@ btnSubmit.addEventListener('click', (e) => {
   let resultSplit = isNaN(emailSplit[0]);
   
   if (email == email.toLowerCase() && resultSplit === true && email !== "" && emailSplit.indexOf('@') !== -1 && !email.endsWith('@') && (emailSplit.indexOf('.') !== -1 && email.indexOf('@') < email.indexOf('.') && !email.endsWith('.'))){
-    if(validName === true && nome.length >= 3){
+    if(validName === true && nome.length && text !== ''){
       window.location.href = "/components/Reserva/index.html";
     }else{
       resultNome.innerText = "Nome inválido!";

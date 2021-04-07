@@ -27,6 +27,13 @@ btnReservar.addEventListener('click', (e) => {
 
   let dataFormated = formatter.format(dataMais2);
 
+  if(dateStart === '' || dateEnd === ''){
+    resultReserva.innerText = "Data inválida!";
+    resultReserva.style.margin = "0 auto";
+    resultReserva.style.color = "red"; 
+    return;
+  }
+
   let dataInicio = new Date(dateStart);
   let dataFinal = new Date(dateEnd);
   let dateStartFormated = formatter.format(dataInicio);
@@ -40,14 +47,28 @@ btnReservar.addEventListener('click', (e) => {
     resultReserva.innerText = "Reserva indisponível!";
     resultReserva.style.color = "red"; 
     resultReserva.style.margin = "2rem auto";
-    btnReservar.style.marginTop = "-4.6rem"
+    btnReservar.style.marginTop = "-2rem"
   }
 
   function success(){
     resultReserva.innerText = "Reserva Solicitada!";
     resultReserva.style.color = "#adff29";
     resultReserva.style.margin = "2rem auto";
-    btnReservar.style.marginTop = "-4.6rem"
+    btnReservar.style.marginTop = "-2rem"
+  }
+
+  if(adultos === ''){
+    resultReserva.innerText = "Insira a quantidade de adultos!";
+    resultReserva.style.color = "red"; 
+    resultReserva.style.margin = "0 auto";
+    return;
+  }
+  
+  if(crianças3anos === '' || crianças12anos === ''){
+    resultReserva.innerText = "Quantidade de crianças inválida!";
+    resultReserva.style.color = "red"; 
+    resultReserva.style.margin = "0 auto";
+    return;
   }
 
 if((dateStartFormated && dateEndFormated < dataFormated) || (dateStartFormated >= dateEndFormated) ||(adultosNumber < 1 || adultosNumber > 4) ||
