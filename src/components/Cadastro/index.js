@@ -11,7 +11,7 @@ var resultCEP;
 btnSubmit.addEventListener('click', (e) => {
   e.preventDefault();
 
-  let nome = document.getElementById('name');
+  let nome = document.getElementById('name').value;
   let email = document.getElementById('email').value;
   let cpf = document.getElementById('cpf').value;
   let cep = document.getElementById('cep').value;
@@ -22,8 +22,6 @@ btnSubmit.addEventListener('click', (e) => {
   let data = document.getElementById('date');
 
 
-
-  console.log(cpf);
   let emailSplit = email.split("");
 
   let resultSplit = isNaN(emailSplit[0]);
@@ -49,54 +47,52 @@ btnSubmit.addEventListener('click', (e) => {
     return true;
 }
 
-function callback_cep(conteudo) {
-  console.log(conteudo);
-  if (!("erro" in conteudo)) {
-    console.log(conteudo)
-      resultCEP = conteudo.uf;
+async function getCEP(url) {
+  console.log(url)
+  if(url === '' || cep === ''){
+    result.innerText = "CEP inválido!";
+    result.style.color = "red";
+  }
+  const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`)
+  const json = await response.json()
+  console.log(json)
+  if(json.uf !== state){
+    result.innerText = "CEP e Estado não conferem!";
+    result.style.color = "red";
+  }else{
+    result.innerText = "";
+    return true;
   }
 }
 
-function validaCEP(cep){
-  console.log(cep);
-  var script = document.createElement('script');
-  script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=callback_cep';
-  document.body.appendChild(script);
-}
-
 function validState(){
+  console.log(state)
   if(state === '' || state == state.toLowerCase()){
     console.log('adsa')
     result.innerText = "Estado inválido!";
     result.style.color = "red";
+  }else{
+    return true;
   }
 }
 
 function validCity(){
+  console.log(city);
   if(city === '' ){
     result.innerText = "Cidade inválida!";
     result.style.color = "red";
+  }else{
+    return true;
   }
-}
-
-function validCEP(cep){
-  if(cep === ''){
-    result.innerText = "CEP inválido!";
-    result.style.color = "red";
-    }else{
-      validaCEP(cep);
-      console.log(state,resultCEP)
-        if(state !== resultCEP){
-          result.innerText = "CEP e Estado não conferem!";
-          result.style.color = "red";
-        }
-    }
 }
 
 function validSex(){
   if(sex === ''){
     result.innerText = "Sexo inválido!";
     result.style.color = "red";
+  }else{
+    result.innerText = "";
+    return true;
   }
 }
 
@@ -104,10 +100,12 @@ function validCivil(){
   if(civil === ''){
     result.innerText = "Estado Civil inválido!";
     result.style.color = "red";
+  }else{
+    return true;
   }
 }
 
-function validDatePrev(data){
+function ValidaDtNasc(data){
   const date = new Date();
   const formatter = new Intl.DateTimeFormat('pt-BR');
   const dataFormated = formatter.format(date);
@@ -117,50 +115,72 @@ function validDatePrev(data){
   
   var strData = dtNascFormated;
   var partesData = strData.split("/");
-  var data2 = new Date(partesData[2], partesData[1] - 1, partesData[0]);
+  var data = new Date(partesData[2], partesData[1] - 1, partesData[0]);
 
-  if(data.value === '' || data2 < new Date('01/01/1900') || data2 > new Date()){
+  if(data.value === '' || data < new Date('01/01/1900') || data > new Date()){
       return false;
   }
 }
 
 
 function validCPFResult(){
-  console.log('caiu')
   if(cpf === '' || validaCPF(cpf) === false){
     console.log('caiu')
-    res.innerText = "CPF inválido!";
+    result.innerText = "CPF inválido!";
     result.style.color = "red";
+  }else{
+    return true;
   }
 }
 
 function validDate(){
-   if(validDatePrev(data) === false || data.value === ''){
+  console.log(validDatePrev(data));
+  console.log(data.value);
+   if(ValidaDtNasc(data) === false || data.value === ''){
       result.innerText = "Data de nascimento inválida!";
       result.style.color = "red";
     }
 }
 
-
-  if (email == email.toLowerCase() && resultSplit === true && email !== "" && emailSplit.indexOf('@') !== -1 && 
-  !email.endsWith('@') && (emailSplit.indexOf('.') !== -1 && email.indexOf('@') < email.indexOf('.') && !email.endsWith('.'))){
-    validCEP(cep);
-    validState();
-    validCity();
-    validSex();
-    validCivil();
-    validDate();
-    validCPFResult();
-
-
-      // window.location.href = "/components/Reserva/index.html";
-  }else{
-    result.style.marginTop = '-20px';
-    result.innerText = "Email inválido!";
-    result.style.color = "red";
+  function validEmail(){
+    if (email == email.toLowerCase() && resultSplit === true && email !== "" && emailSplit.indexOf('@') !== -1 && 
+    !email.endsWith('@') && (emailSplit.indexOf('.') !== -1 && email.indexOf('@') < email.indexOf('.') && !email.endsWith('.'))){
+      return true;
+    }else{
+      result.style.marginTop = '-25px';
+      result.innerText = "Email inválido!";
+      result.style.color = "red";
+    }
   }
-})
 
+  function validName(){
+    if(nome == ''){
+      result.style.marginTop = '-25px';
+      result.innerText = "Nome inválido!";
+      result.style.color = "red";
+    }else{
+      return true;
+    }
+  }
+  
+  function validPassword(){
+    if(password.value === ''){
+      resultPassword.innerText = "Senha inválida!";
+      resultPassword.style.color = "red";
+    }else{
+      resultPassword.innerText = "";
+      return true;
+    }
+  }
+
+  if( validName() === true && validEmail() === true && validState() === true && validCity() === true && validSex() === true && validCivil() === true
+  && validCPFResult(cpf) === true && validPassword() === true ){
+    getCEP(cep).then(result => {
+      if(result === true){
+      window.location.href = "/components/Reserva/index.html";
+    }})
+    }
+})
 
 password.addEventListener('keyup', (e) => {
 
@@ -183,8 +203,6 @@ password.addEventListener('keyup', (e) => {
     strong.innerText = "";
     progress.style.backgroundColor = '';
   }else{
-    console.log(regexStrong.test(password.value));
-    console.log(getMedium())
     resultPassword.innerText = "";
     resultPassword.style.color = "red";
     if(password.value.lenght == 6 || regex.test(password.value) === false){
@@ -218,5 +236,4 @@ confirmPassword.addEventListener('keyup', (e) => {
   }else{
     resultConfirm.innerText = "";
   }
-
 })
