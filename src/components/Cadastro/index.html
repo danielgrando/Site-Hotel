@@ -90,12 +90,15 @@
         <div class="box-input">
           <div>
             <label for="password">Senha:</label>
-            <input type="password" id="password" onkeyup="javascript:verifica()"/>
+            <input type="password" id="password" />
             <span id="resultPassword"></span>
+            <span id="strong"></span>
+            <div id="progress"></div>
           </div>
           <div>
             <label for="confirm-password">Confirmação de Senha:</label>
-            <input type="password" id="confirm-password"  />
+            <input type="password" id="confirmPassword" onpaste="return false" />
+            <span id="resultConfirm"></span>
           </div>
         </div>
 

@@ -1,8 +1,13 @@
 
 const btnSubmit = document.getElementById('btnSubmit');
-let password = document.getElementById('password').value;
+let password = document.getElementById('password');
+let confirmPassword = document.getElementById('confirmPassword');
+let resultConfirm = document.getElementById('resultConfirm');
 let resultPassword = document.getElementById('resultPassword');
+let strong = document.getElementById('strong');
+let progress = document.getElementById('progress');
 var resultCEP;
+
 btnSubmit.addEventListener('click', (e) => {
   e.preventDefault();
 
@@ -87,6 +92,7 @@ function validCEP(cep){
         }
     }
 }
+
 function validSex(){
   if(sex === ''){
     result.innerText = "Sexo inválido!";
@@ -149,7 +155,68 @@ function validDate(){
 
       // window.location.href = "/components/Reserva/index.html";
   }else{
+    result.style.marginTop = '-20px';
     result.innerText = "Email inválido!";
     result.style.color = "red";
   }
+})
+
+
+password.addEventListener('keyup', (e) => {
+
+  function getMedium(){
+    return regex.test(password.value);
+  }
+
+  function getStrong(){
+    return regexStrong.test(password.value);
+  }
+
+  e.preventDefault();
+
+  let regex = /^(?=.*[@!#$%^&*()/\\])[@!#$%^&*()/\\a-zA-Z0-9]{8,20}$/;
+  let regexStrong = /(?=.*([}{,.^?#@~=+\-_\/*\-+.\|]).{2,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{6,}/;
+
+  if(password.value.length < 6 || password.value.length > 12){
+    resultPassword.innerText = "Senha inválida!";
+    resultPassword.style.color = "red";
+    strong.innerText = "";
+    progress.style.backgroundColor = '';
+  }else{
+    console.log(regexStrong.test(password.value));
+    console.log(getMedium())
+    resultPassword.innerText = "";
+    resultPassword.style.color = "red";
+    if(password.value.lenght == 6 || regex.test(password.value) === false){
+      strong.innerText = "Senha Fraca!";
+      strong.style.color = "red";
+      progress.style.width = '50px';
+      progress.style.height = '4px';
+      progress.style.backgroundColor = 'red';
+    }else if(password.value.length > 6 && getMedium() === true && getStrong() === false){
+      strong.innerText = "Senha Média!";
+      strong.style.color = "green";
+      progress.style.width = '100px';
+      progress.style.height = '4px';
+      progress.style.backgroundColor = 'green';
+    } else if(password.value.length > 6 && getStrong() === true){
+      strong.innerText = "Senha Forte!";
+      strong.style.color = "blue";
+      progress.style.width = '200px';
+      progress.style.height = '4px';
+      progress.style.backgroundColor = 'blue';
+    }
+  }
+})
+
+confirmPassword.addEventListener('keyup', (e) => {
+  e.preventDefault();
+
+  if(confirmPassword.value === '' || confirmPassword.value !== password.value){
+    resultConfirm.innerText = "Senhas Diferentes!";
+    resultConfirm.style.color = "red";
+  }else{
+    resultConfirm.innerText = "";
+  }
+
 })

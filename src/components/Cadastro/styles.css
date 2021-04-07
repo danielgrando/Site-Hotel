@@ -133,4 +133,10 @@ input:focus{
     background-color: rgba(255, 0, 0, 0.8)
 }
 
+#strong{
+    display: block;
+}
 
+#progress{
+    display: block;
+}
